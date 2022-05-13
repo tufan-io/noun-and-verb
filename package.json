@@ -1,6 +1,6 @@
 {
   "name": "noun-and-verb",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "A batteries included GraphQL API generator for [prisma](https://www.prisma.io/) schema(e).",
   "main": "index.js",
   "type": "module",
@@ -10,8 +10,8 @@
     "README.md"
   ],
   "scripts": {
-    "postinstall": "node post-install.js",
-    "docs": "docsify serve docs"
+    "postinstall": "node scripts/post-install.cjs",
+    "docs": "serve docs"
   },
   "bin": {
     "noun_and_verb": "index.js",
@@ -22,8 +22,13 @@
   "license": "See License File",
   "dependencies": {
     "@prisma/generator-helper": "^3.9.1",
-    "docsify-cli": "^4.4.4",
     "execa": "^6.0.0",
     "prisma": "^3.9.1"
+  },
+  "devDependencies": {
+    "micro": "^9.3.4"
+  },
+  "scatter-bin": {
+    "downloadUrl": "https://github.com/tufan-io/noun-and-verb"
   }
 }
