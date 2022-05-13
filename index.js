@@ -26,7 +26,7 @@ generatorHandler({
       const file_rpc = path.resolve(`${outputDir}/.tmp/nv_rpc.json`);
       fs.mkdirSync(path.dirname(file_rpc), { recursive: true });
       fs.writeFileSync(file_rpc, JSON.stringify(options, null, 2), "utf8");
-      const _exe = execa(`${__dirname}/bin/noun-and-verb`, [outputDir, file_rpc], { stdio: 'pipe'});
+      const _exe = execa(`${__dirname}/bin/noun_and_verb`, [outputDir, file_rpc], { stdio: 'pipe'});
       _exe.stdout.pipe(process.stdout);
       _exe.stderr.pipe(process.stderr);
       await _exe;
