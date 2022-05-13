@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "./db.sqlite"
+  url      = "file:./db.sqlite"
 }
 
 generator noun_and_verb {
