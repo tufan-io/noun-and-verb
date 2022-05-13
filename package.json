@@ -8,7 +8,8 @@
     "index.js",
     "LICENSE.md",
     "README.md",
-    "scripts"
+    "scripts",
+    "example"
   ],
   "scripts": {
     "postinstall": "node scripts/post-install.cjs",

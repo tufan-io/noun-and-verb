@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator noun_and_verb {
+  // This is the noun & verb generator
+  // Learn more about it in the docs: https://tufan-io.github.io/noun-and-verb-docs/
+  provider = "noun_and_verb"
+}
+
+model User {
+  /// @readOnly
+  id        String   @id @default(cuid())
+  name      String
+  /// @createOnly
+  username  String
+  email     String
+  /// This is a password
+  /// @writeOnly
+  password  String
+  /// @readOnly
+  createdAt DateTime @default(now())
+  /// @readOnly
+  updatedAt DateTime @default(now())
+  cart      Cart?
+}
+
+model Cart {
+  /// @readOnly
+  id        String    @id @default(cuid())
+  /// @readOnly
+  createdAt DateTime  @default(now())
+  /// @readOnly
+  updatedAt DateTime  @default(now())
+  user      User      @relation(fields: [userId], references: [id])
+  userId    String    @unique
+  items     Product[]
+  coupon    String?
+}
+
+model Product {
+  /// @readOnly
+  id        String   @id @default(cuid())
+  name      String
+  price     Int
+  image     String
+  /// @readOnly
+  createdAt DateTime @default(now())
+  /// @readOnly
+  updatedAt DateTime @default(now())
+  carts     Cart[]
+}
