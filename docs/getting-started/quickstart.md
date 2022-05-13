@@ -8,7 +8,7 @@ example, check out [`tutorial`](getting-started/tutorial.md).
 `Noun & Verb` can be installed from `npm`.
 
 ```
-npm i -D noun-and-verb
+npm i noun-and-verb prisma --save-dev
 ```
 
 After you install it, you need to add this to schema.
