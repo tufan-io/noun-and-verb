@@ -9,7 +9,7 @@
     "LICENSE.md",
     "README.md",
     "scripts",
-    "example"
+    "examples"
   ],
   "scripts": {
     "postinstall": "node scripts/post-install.cjs",
