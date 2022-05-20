@@ -23,12 +23,14 @@
   "author": "sramam",
   "license": "See License File",
   "dependencies": {
-    "@prisma/generator-helper": "^3.9.1",
-    "execa": "^6.0.0",
-    "prisma": "^3.9.1"
+    "execa": "^6.0.0"
   },
   "devDependencies": {
     "micro": "^9.3.4"
+  },
+  "peerDependencies": {
+    "@prisma/generator-helper": "^3.9.1",
+    "prisma": "^3.9.1"
   },
   "scatter-bin": {
     "downloadUrl": "https://github.com/tufan-io/noun-and-verb"
