@@ -39,9 +39,12 @@ jobs:
       - run: npm --version
       - run: git config --global url."https://${{secrets.ACTION_CI}}@github.com".insteadOf ssh://git@github.com
       - run: |
-         mkdir demo
-         cd demo
-         npm init noun-and-verb . -- --demo
-         npm run generate
-         npm run migrate -- -n initial-migration
-         npm run test
+          mkdir demo
+          cd demo
+          npm init noun-and-verb . -- --demo
+          npm run generate
+          npm run migrate -- -n initial-migration
+          npm run test
+        env:
+          NODE_ENV=dev
+
