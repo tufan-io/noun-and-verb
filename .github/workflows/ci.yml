@@ -46,5 +46,5 @@ jobs:
           npm run migrate -- -n initial-migration
           npm run test
         env:
-          NODE_ENV=dev
+          NODE_ENV: dev
 
