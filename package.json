@@ -1,6 +1,6 @@
 {
   "name": "noun-and-verb",
-  "version": "0.0.1-beta-rc3",
+  "version": "0.0.1-beta-rc4",
   "description": "A batteries included GraphQL API generator for [prisma](https://www.prisma.io/) schema(e).",
   "main": "index.js",
   "type": "module",
@@ -29,8 +29,8 @@
     "micro": "^9.3.4"
   },
   "peerDependencies": {
-    "@prisma/generator-helper": "^3.9.1",
-    "prisma": "^3.9.1"
+    "@prisma/generator-helper": "^3.14.0",
+    "prisma": "^3.14.0"
   },
   "scatter-bin": {
     "downloadUrl": "https://github.com/tufan-io/noun-and-verb"

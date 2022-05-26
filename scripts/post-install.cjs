@@ -4,7 +4,7 @@ var require$$1 = require('path');
 var require$$0$1 = require('fs');
 var require$$3$1 = require('os');
 var require$$2 = require('https');
-var require$$3 = require('node:url');
+var require$$3 = require('url');
 var require$$4 = require('zlib');
 var require$$0$2 = require('util');
 var require$$5 = require('assert');
@@ -638,7 +638,7 @@ function requireDownload () {
 		const tslib_1 = require$$0;
 		const fs = tslib_1.__importStar(require$$0__default["default"]);
 		const https = tslib_1.__importStar(require$$2__default["default"]);
-		const node_url_1 = tslib_1.__importDefault(require$$3__default["default"]);
+		const url_1 = tslib_1.__importDefault(require$$3__default["default"]);
 		// import rimraf from "rimraf";
 		const zlib_1 = tslib_1.__importDefault(require$$4__default["default"]);
 		const { untar } = requireUntar();
@@ -655,7 +655,7 @@ function requireDownload () {
 		        const data = [];
 		        // const data = new Blob();
 		        (0, exports.debug)(`fetching ${url}`);
-		        node_url_1.default.parse(url);
+		        url_1.default.parse(url);
 		        _private
 		            ? {
 		                Authorization: `token ${process.env.GITHUB_TOKEN}`,
