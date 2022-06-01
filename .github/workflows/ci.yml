@@ -45,6 +45,7 @@ jobs:
           npm run generate
           npm run migrate -- -n initial-migration
           npm run test -- --testTimeout=30000
+          npm run test -- --testTimeout=30000 # second run to ensure the tests are repeatable
         env:
           NODE_ENV: dev
 
