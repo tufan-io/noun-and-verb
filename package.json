@@ -1,6 +1,6 @@
 {
   "name": "noun-and-verb",
-  "version": "0.0.1-beta-rc18",
+  "version": "0.0.1",
   "description": "A batteries included GraphQL API generator for [prisma](https://www.prisma.io/) schema(e).",
   "main": "index.js",
   "type": "module",
@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "sramam",
-  "license": "See License File",
+  "license": "SEE LICENSE IN License.md",
   "dependencies": {
     "execa": "^6.0.0"
   },
@@ -34,5 +34,17 @@
   },
   "scatter-bin": {
     "downloadUrl": "https://github.com/tufan-io/noun-and-verb"
-  }
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufan-io/noun-and-verb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tufan-io/noun-and-verb/issues"
+  },
+  "homepage": "https://github.com/tufan-io/noun-and-verb#readme"
 }
