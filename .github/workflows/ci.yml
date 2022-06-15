@@ -44,8 +44,8 @@ jobs:
           npm init noun-and-verb . -- --demo
           npm run generate
           npm run migrate -- -n initial-migration
-          npm run test -- --testTimeout=30000
-          npm run test -- --testTimeout=30000 # second run to ensure the tests are repeatable
+          npm run test -- --testTimeout=60000
+          npm run test -- --testTimeout=60000 # second run to ensure the tests are repeatable
         env:
           NODE_ENV: dev
 
