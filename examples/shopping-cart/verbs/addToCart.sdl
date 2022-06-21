@@ -1,0 +1,7 @@
+extend type Mutation {
+  addToCart (
+    user_id: String!,
+    product_id: String!,
+    count: Int
+  ): Cart!,
+}
