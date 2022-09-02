@@ -31,11 +31,12 @@ generatorHandler({
       _exe.stdout.pipe(process.stdout);
       _exe.stderr.pipe(process.stderr);
       await _exe;
+
       // if no errors found, run another install & format the source code.
       const spinner = ora();
       spinner.start(`installing dependencies`);
-      await exec({ cmd: `npm install`, cwd: outputDir });
-      await exec({ cmd: `npm run format`, cwd: outputDir });
+      await execa(`npm`, [`install`], { stdio: 'pipe', cwd: outputDir});
+      await execa(`npm`, [`run`, `format`], { stdio: 'pipe', cwd: outputDir});
       spinner.succeed(`installed dependencies`);
       
       fs.rmSync(file_rpc);
