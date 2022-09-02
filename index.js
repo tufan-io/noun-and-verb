@@ -2,6 +2,7 @@
 import { generatorHandler } from "@prisma/generator-helper";
 import * as fs from "fs";
 import * as path from "path";
+import ora from "ora";
 import { execa } from "execa";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
@@ -30,9 +31,15 @@ generatorHandler({
       _exe.stdout.pipe(process.stdout);
       _exe.stderr.pipe(process.stderr);
       await _exe;
+      // if no errors found, run another install & format the source code.
+      const spinner = ora();
+      spinner.start(`installing dependencies`);
+      await exec({ cmd: `npm install`, cwd: outputDir });
+      await exec({ cmd: `npm run format`, cwd: outputDir });
+      spinner.succeed(`installed dependencies`);
+      
       fs.rmSync(file_rpc);
     } catch (err) {
-      console.log(err);
       // the deno executable prints the error, so we just silently exit here
       process.exit(-1);
     }
