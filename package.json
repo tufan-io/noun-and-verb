@@ -23,7 +23,8 @@
   "author": "sramam",
   "license": "SEE LICENSE IN License.md",
   "dependencies": {
-    "execa": "^6.0.0"
+    "execa": "^6.0.0",
+    "ora": "^6.1.2"
   },
   "devDependencies": {
     "micro": "^9.3.4"
