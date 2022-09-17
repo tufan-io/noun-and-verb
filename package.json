@@ -1,6 +1,6 @@
 {
   "name": "noun-and-verb",
-  "version": "0.1.0-rc21",
+  "version": "0.1.0-rc22",
   "description": "A batteries included GraphQL API generator for [prisma](https://www.prisma.io/) schema(e).",
   "main": "index.js",
   "type": "module",
