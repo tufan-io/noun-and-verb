@@ -1,15 +1,6 @@
+name: ci-test
 on:
-  # pull_request:
-  #   branches:
-  #     - "*"
-  #     - "!gh-pages/*"
-  #     - "!releases/*"
-  push:
-    branches:
-      - "*"
-      - "!gh-pages/*"
-      - "!releases/*"
-name: ci
+  workflow_dispatch
 
 jobs:
   action:
