@@ -13,11 +13,13 @@ let defaultOutput;
 generatorHandler({
   onManifest() {
     defaultOutput = defaultOutput ?? process.cwd();
-    const version = require("./package.json").version;
+    const version = JSON.parse(
+      fs.readFileSync("./package.json", "utf8")
+    ).version;
     return {
       defaultOutput,
       requiresGenerators: ["prisma-client-js"],
-      prettyName: "Noun & Verb - GraphQL generator for Prisma (${version} | API)",
+      prettyName: `Noun & Verb - GraphQL API (${version} | API)`,
     };
   },
   async onGenerate(options) {
@@ -40,10 +42,10 @@ generatorHandler({
       // if no errors found, run another install & format the source code.
       const spinner = ora();
       spinner.start(`installing dependencies`);
-      await execa(`npm`, [`install`], { stdio: 'pipe', cwd: outputDir});
-      await execa(`npm`, [`run`, `format`], { stdio: 'pipe', cwd: outputDir});
+      await execa(`npm`, [`install`], { stdio: "pipe", cwd: outputDir });
+      await execa(`npm`, [`run`, `format`], { stdio: "pipe", cwd: outputDir });
       spinner.succeed(`installed dependencies`);
-      
+
       fs.rmSync(file_rpc);
     } catch (err) {
       // the deno executable prints the error, so we just silently exit here
